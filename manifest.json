@@ -1,8 +1,11 @@
 {
 	"name": "Inject sidebar",
+	"manifest_version": 2,
 	"description": "Inject a sidebar on the current tab when the page action is clicked",
-	"version": "0.1",
-	"background_page": "background.html",
+	"version": "0.2",
+	"background": {
+		"page": "background.html"
+	},
 	"page_action": {
 		"default_icon": "icon.png",
 		"default_title": "Inject sidebar"
