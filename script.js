@@ -11,15 +11,13 @@ function handleRequest(
 chrome.extension.onRequest.addListener(handleRequest);
 
 /*Small function wich create a sidebar(just to illustrate my point)*/
-var sidebarOpen = false;
 function toggleSidebar() {
-	if(sidebarOpen) {
-		var el = document.getElementById('mySidebar');
-		el.parentNode.removeChild(el);
-		sidebarOpen = false;
+        var sidebar = document.getElementById('mySidebar');
+	if(sidebar) {
+		sidebar.parentNode.removeChild(sidebar);
 	}
 	else {
-		var sidebar = document.createElement('div');
+		sidebar = document.createElement('div');
 		sidebar.id = "mySidebar";
 		sidebar.innerHTML = "\
 			<h1>Hello</h1>\
@@ -36,6 +34,5 @@ function toggleSidebar() {
 			z-index:999999;\
 		";
 		document.body.appendChild(sidebar);
-		sidebarOpen = true;
 	}
 }
